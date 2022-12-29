@@ -10,7 +10,6 @@ import static com.brazil.geek.helper.Utils.pause;
 import static com.brazil.geek.helper.Utils.stringToDate;
 import static java.lang.Integer.parseInt;
 import static java.lang.System.exit;
-import static java.lang.System.identityHashCode;
 
 public class Banco {
 
