@@ -40,6 +40,7 @@ public class Conta {
 
     public void setLimite(Double limite) {
         this.limite = limite;
+        this.atualizaSaldoTotal();
     }
 
     public Double getSaldoTotal() {
@@ -74,8 +75,8 @@ public class Conta {
             if (this.getSaldo() >= value)
                 this.saldo = this.getSaldo() - value;
             else {
-                Double restante = this.getSaldo() - value;
-                this.limite = this.getLimite() - restante;
+                Double restante = this.getSaldo() - value; // 500 - 600 -> -100
+                this.limite = this.getLimite() + restante; // 200 - -100 ->
                 this.saldo = 0.0;
             }
             this.atualizaSaldoTotal();
@@ -89,7 +90,7 @@ public class Conta {
                 this.saldo = this.getSaldo() - value;
             else {
                 Double restante = this.getSaldo() - value;
-                this.limite = this.getLimite() - restante;
+                this.limite = this.getLimite() + restante;
                 this.saldo = 0.0;
             }
             destino.saldo = destino.getSaldo() + value;

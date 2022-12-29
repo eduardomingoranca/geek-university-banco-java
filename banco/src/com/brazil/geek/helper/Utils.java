@@ -12,6 +12,14 @@ public class Utils {
     static NumberFormat numberFormat = new DecimalFormat("R$ #,##0.00",
             new DecimalFormatSymbols(new Locale("pt", "BR")));
 
+    public static Date stringToDate(String date) {
+        try {
+            return simpleDateFormat.parse(date);
+        } catch (ParseException e) {
+            return null;
+        }
+    }
+
     public static String dateToString(Date date) {
         return simpleDateFormat.format(date);
     }
